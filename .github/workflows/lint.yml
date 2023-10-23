@@ -4,17 +4,18 @@ on:
   pull_request:
   push:
 
-  jobs:
-    java-lint:
-      name : Lint
-      reuns-on: ubuntu-lastest
 
-      steps:
-        - uses: actions/checkout@v4
+jobs:
+  java-lint:
+    name : Lint
+    runs-on: ubuntu-lastest
 
-        - uses: nikitasavinov/checkstyle-action@master
-          with:
-            github_token: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: nikitasavinov/checkstyle-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
 
 
 
